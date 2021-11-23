@@ -11,6 +11,7 @@
     padding: 0;
     box-sizing: border-box;
     text-decoration: none;
+    list-style: none;
 }
 
 a {
@@ -36,17 +37,31 @@ h6 {
     color: rgb(181, 181, 181);
 }
 
+
+/* .boxed-width {
+    max-width: 60rem;
+    margin: auto;
+} */
+
 .main-header {
     text-align: center;
     background-color: #feeea3;
+    width: 10rem;
+    height: 100%;
+    /* width: 100%; */
+    /* height: 100%; */
+    display: flex;
     padding: 1rem;
+    box-shadow: 2px 8px 8px 8px rgba(0, 0, 0, 0.3);
 }
 
 .main-nav__item {
-    display: inline-block;
+    /* display: inline-block; */
     background-color: #682413;
-    padding: 0.3rem 0.8rem;
-    margin: 1rem 1rem 2rem;
+    text-align: left;
+    padding: 0.3rem 1rem;
+    /* padding: 0.3rem 0.8rem; */
+    margin: 1rem 0.2rem 2rem;
     border-radius: 0.8rem;
     box-shadow: 2px 2px 2px 2px rgba(0, 0, 0, 0.1);
 }
@@ -56,28 +71,67 @@ h6 {
     background-color: #462205;
 }
 
+.main-header {
+    position: absolute;
+}
+
+.main-header__nav {
+    position: relative;
+    z-index: 1;
+    top: 50%;
+    transform: translate(0, -50%);
+}
+
+@media screen and (max-width: 60rem) {
+    .main-header {
+        width: 100%;
+        height: 14%;
+        box-shadow: none;
+        position: none;
+    }
+    .main-nav__item {
+        display: inline-block;
+        margin: 1rem;
+        padding: 0.3rem 0.8rem;
+        position: none;
+    }
+}
+
 
 /* -------------BODY------------- */
 
 .bg-general {
     background-color: #ffbd7a;
     width: 100%;
+    height: 100%;
+    position: absolute;
+    z-index: -1;
 }
 
 .noticias-container {
+    /* position: absolute; */
     text-align: center;
+    vertical-align: center;
+    max-width: 64rem;
+    margin: 0 auto;
 }
 
 .noticias {
+    display: flex;
+    align-items: center;
+    padding-left: 10rem;
     padding-top: 2rem;
     padding-bottom: 4rem;
+    height: 100%;
+    /* position: relative; */
 }
 
 .noticias-info {
     text-align: left;
     background-color: #fff5d0;
     display: inline-block;
-    max-width: 25rem;
+    max-width: 20rem;
+    /* max-width: 25rem; */
     margin: 0.5rem;
     padding: 1.5rem;
     border-radius: 0.5rem;
@@ -109,4 +163,17 @@ h6 {
     background-color: #bf3a1a;
     padding: 0.2rem 1.2rem;
     border-radius: 0.4rem;
+}
+
+.main-header,
+.bg-general {
+    display: inline-block;
+}
+
+@media screen and (max-width: 60rem) {
+    .bg-general {
+        width: 100%;
+        height: 100%;
+        position: relative;
+    }
 }
